@@ -5,6 +5,10 @@ const app = express();
 connectDB();
 app.use(express.static("public"));
 
+//=== SEARCH ===//
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 //=== LAYOUT ===//
 const expressLayouts = require("express-ejs-layouts");
 app.use(expressLayouts);

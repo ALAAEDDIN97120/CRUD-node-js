@@ -5,14 +5,16 @@
 	</h1>
 	<img src="/imgs/banner.png" class="object-fit-cover" />
 	<section class="articals">
-		<ul class="articals-ul list-unstyled">
+		<ul class="articals-ul list-unstyled mt-5">
+			<% data.forEach(post => { %>
 			<li class="d-flex justify-content-between">
-				<a href="#" class="text-decoration-none text-black">
-					<span>Post Title</span>
+				<a href="/post/<%= post._id %>" class="text-decoration-none text-black">
+					<span><%= post.title %></span>
 				</a>
-				<span>Date</span>
+				<span><%= post.createdAt.toDateString() %></span>
 			</li>
 			<hr />
+			<% }) %>
 		</ul>
 	</section>
 </div>

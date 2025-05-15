@@ -1,0 +1,19 @@
+<div class="container mt-4">
+	<h2>Results : <%= searchTerm %></h2>
+	<% if (results.length > 0) { %>
+	<div class="list-group">
+		<% results.forEach(post => { %>
+		<div class="list-group-item">
+			<h5 class="mb-1"><%= post.title %></h5>
+			<p class="mb-1"><%= post.body %></p>
+			<small class="text-muted"><%= post.createdAt.toDateString() %></small>
+		</div>
+
+		<% }) %>
+	</div>
+	<% } else { %>
+	<div class="alert alert-warning">
+		<h1>No Results found</h1>
+	</div>
+	<% } %>
+</div>
