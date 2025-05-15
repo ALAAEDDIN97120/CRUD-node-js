@@ -1,7 +1,8 @@
 require("dotenv").config();
 const express = require("express");
+const connectDB = require("./server/config/db");
 const app = express();
-
+connectDB();
 app.use(express.static("public"));
 
 //=== LAYOUT ===//
