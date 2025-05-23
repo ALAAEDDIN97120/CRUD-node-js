@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const post = require("../models/Post");
 const Post = require("../models/Post");
 
 //=== ROUTE HANDLERS ===//
@@ -10,8 +9,8 @@ router.get("/", async (req, res) => {
 	try {
 		const data = await Post.find();
 		res.render("index", { data });
-	} catch (erorr) {
-		console.log(erorr);
+	} catch (error) {
+		console.log(error);
 	}
 });
 
@@ -20,8 +19,8 @@ router.get("/post/:postId", async (req, res) => {
 		const postId = req.params.postId;
 		const data = await Post.findById(postId);
 		res.render("post", { data });
-	} catch (erorr) {
-		console.log(erorr);
+	} catch (error) {
+		console.log(error);
 	}
 });
 
