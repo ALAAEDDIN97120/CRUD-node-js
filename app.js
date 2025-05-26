@@ -8,6 +8,8 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
+const methodoverride = require("method-override");
+app.use(methodoverride("_method"));
 
 //=== SEARCH ===//
 app.use(express.urlencoded({ extended: true }));

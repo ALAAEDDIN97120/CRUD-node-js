@@ -1,0 +1,40 @@
+<div class="container mt-5">
+	<h1 class="text-center mb-4">Add New Post</h1>
+
+	<div class="card shadow-lg p-4 rounded">
+		<form action="/add-post" method="POST">
+			<!-- Title -->
+			<div class="mb-3">
+				<label for="title" class="form-label fw-bold">Title</label>
+				<input
+					type="text"
+					id="title"
+					name="title"
+					class="form-control"
+					placeholder="Enter Post title"
+					required
+				/>
+			</div>
+
+			<!-- Content -->
+			<div class="mb-3">
+				<label for="body" class="form-label fw-bold">Content</label>
+				<textarea
+					id="body"
+					name="body"
+					class="form-control"
+					rows="5"
+					placeholder="Write your post"
+					required
+				></textarea>
+			</div>
+
+			<!-- Add Button -->
+			<div class="text-center">
+				<button type="submit" class="btn btn-success px-4 py-2">
+					Add Post
+				</button>
+			</div>
+		</form>
+	</div>
+</div>

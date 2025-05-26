@@ -1,0 +1,29 @@
+<h1 class="text-center mt-5">Postas</h1>
+
+<ul class="articals-ul list-unstyled mt-5">
+	<% locals.forEach(post => { %>
+	<li class="d-flex justify-content-between">
+		<a href="/post/<%= post._id %>" class="text-decoration-none text-black">
+			<span><%= post.title %></span>
+		</a>
+		<span><%= post.createdAt.toDateString() %></span>
+
+		<div class="s-flex align-center gap-3">
+			<a href="/add-post/<%= post._id %>" class="btn btn-primary">ُEdit</a>
+			<!--Edit Button-->
+			<a href="/edit-post/<%= post._id %>" class="btn btn-warning btn-sm"
+				>ُEdit</a
+			>
+			<!--Delete Button-->
+			<form
+				action="/delete-post/<%= post._id %>?_method=DELETE"
+				mathod="post"
+				onsubmit="return confirm('Are you sure you want to delete this post?')"
+			>
+				<button type="submit" class="btn btn-danger btn-sm ms-3">Delete</button>
+			</form>
+		</div>
+	</li>
+	<hr />
+	<% }) %>
+</ul>
